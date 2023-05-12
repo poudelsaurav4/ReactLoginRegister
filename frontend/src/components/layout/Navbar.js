@@ -32,7 +32,7 @@ const Navbar = () => {
               href="/developer"
               className="text-lg font-semibold hover:text-indigo-500"
             >
-              Developers
+              Hello world!!!
             </a>
             {!isAuth ? (
               <>
