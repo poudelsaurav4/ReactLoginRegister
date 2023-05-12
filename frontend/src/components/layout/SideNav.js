@@ -46,7 +46,7 @@ const SideNav = () => {
             >
               <FontAwesomeIcon icon={faCircleNodes} size="xl" />
               <h1 className="  text-xl font-semibold leading-6 text-gray-800">
-                Dev Connect
+                Connect
               </h1>
             </div>
 

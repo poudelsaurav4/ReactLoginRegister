@@ -22,7 +22,7 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={faCircleNodes} size="2xl" />
             <h1 className="  text-2xl font-semibold leading-6 text-gray-800 hover:text-indigo-500">
-              Dev Connect
+              Connect
             </h1>
           </div>
         )}
@@ -34,30 +34,33 @@ const Navbar = () => {
             >
               Developers
             </a>
-            {!isAuth ?<>
+            {!isAuth ? (
+              <>
+                <button
+                  onClick={() => navigate("/register")}
+                  className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700  hover:bg-gray-200   active:bg-white  justify-center items-center"
+                >
+                  Sign Up
+                </button>
+                <button
+                  onClick={() => navigate("/login")}
+                  className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700  hover:bg-indigo-600 active:bg-indigo-900 justify-center items-center"
+                >
+                  Sign In
+                </button>
+              </>
+            ) : (
               <button
-                onClick={() => navigate("/register")}
-                className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700  hover:bg-gray-200   active:bg-white  justify-center items-center"
+                onClick={() => {
+                  store.dispatch(logOut());
+                  store.dispatch(isLoggedout());
+                  window.location.href = "/login";
+                }}
+                className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-red-700  hover:bg-red-600 active:bg-red-900 justify-center items-center"
               >
-                Sign Up
+                Sign Out
               </button>
-              <button
-                onClick={() => navigate("/login")}
-                className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700  hover:bg-indigo-600 active:bg-indigo-900 justify-center items-center"
-              >
-                Sign In
-              </button>
-            </>:
-            <button
-              onClick={() => {
-                store.dispatch(logOut());
-                store.dispatch(isLoggedout());
-                window.location.href = "/login"
-              }}
-              className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-red-700  hover:bg-red-600 active:bg-red-900 justify-center items-center"
-            >
-              Sign Out
-            </button>}
+            )}
           </div>
         </div>
         {/* Burger Icon */}
