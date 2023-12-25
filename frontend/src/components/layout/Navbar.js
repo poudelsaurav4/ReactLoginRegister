@@ -14,7 +14,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="h-14 w-full flex justify-between items-center bg-white px-8 py-2 shadow-xl opacity-90">
+      <nav className="h-14 w-full flex justify-between items-center bg-gray px-8 py-2 shadow-xl opacity-90">
         {!show && (
           <div
             className="flex justify-between items-center  space-x-4 cursor-pointer "
